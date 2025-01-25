@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnokbowiexkla"]
+
+[ext_resource type="Texture2D" uid="uid://dbkrsp2l7jree" path="res://grass.jpg" id="1_3sey8"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="2_6suia"]
+[ext_resource type="Texture2D" uid="uid://sdfjlhqtqepp" path="res://icon.svg" id="3_u13ml"]
+[ext_resource type="Texture2D" uid="uid://behahyxivmsyk" path="res://GunsPack/GunsPack/Guns/Revolver.png" id="4_1a7jq"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="4_s2scx"]
+[ext_resource type="Script" path="res://Scenes/bullet.gd" id="6_tweu8"]
+[ext_resource type="Texture2D" uid="uid://dvsb4w8xb105x" path="res://GunsPack/GunsPack/Bullets/PistolAmmoSmall.png" id="6_u6e2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkc5"]
+size = Vector2(98.6111, 102.778)
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -893.0
+offset_top = -814.0
+offset_right = 2588.0
+offset_bottom = 1409.0
+texture = ExtResource("1_3sey8")
+stretch_mode = 1
+
+[node name="Player" type="CharacterBody2D" parent="."]
+scale = Vector2(0.72, 0.72)
+script = ExtResource("2_6suia")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.694445, -1.65568e-07)
+shape = SubResource("RectangleShape2D_cdkc5")
+
+[node name="Player Sprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_u13ml")
+
+[node name="Following Camera" type="Camera2D" parent="Player"]
+
+[node name="Gun" type="Node2D" parent="Player"]
+script = ExtResource("4_s2scx")
+
+[node name="Gun Sprite" type="Sprite2D" parent="Player/Gun"]
+texture_filter = 1
+scale = Vector2(3.96321, 3.67592)
+texture = ExtResource("4_1a7jq")
+offset = Vector2(17, 0)
+
+[node name="Bullet" type="CharacterBody2D" parent="Player/Gun"]
+position = Vector2(90.585, -9.188)
+scale = Vector2(1.38889, 1.38889)
+script = ExtResource("6_tweu8")
+
+[node name="Bullet Sprite" type="Sprite2D" parent="Player/Gun/Bullet"]
+texture_filter = 1
+scale = Vector2(1.72235, 1.72235)
+texture = ExtResource("6_u6e2t")

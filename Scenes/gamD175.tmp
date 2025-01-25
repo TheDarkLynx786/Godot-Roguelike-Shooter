@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnokbowiexkla"]
+
+[ext_resource type="Texture2D" uid="uid://dbkrsp2l7jree" path="res://grass.jpg" id="1_3sey8"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="2_6suia"]
+[ext_resource type="Texture2D" uid="uid://sdfjlhqtqepp" path="res://icon.svg" id="3_u13ml"]
+[ext_resource type="Texture2D" uid="uid://behahyxivmsyk" path="res://GunsPack/GunsPack/Guns/Revolver.png" id="4_1a7jq"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="4_s2scx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkc5"]
+size = Vector2(98.6111, 102.778)
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -893.0
+offset_top = -814.0
+offset_right = 2588.0
+offset_bottom = 1409.0
+texture = ExtResource("1_3sey8")
+stretch_mode = 1
+
+[node name="Player" type="CharacterBody2D" parent="."]
+scale = Vector2(0.72, 0.72)
+script = ExtResource("2_6suia")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player"]
+position = Vector2(-0.694445, -1.65568e-07)
+shape = SubResource("RectangleShape2D_cdkc5")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_u13ml")
+
+[node name="Following Camera" type="Camera2D" parent="Player"]
+
+[node name="Gun" type="Node2D" parent="Player"]
+position = Vector2(36.1111, 18.0556)
+script = ExtResource("4_s2scx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Gun"]
+texture_filter = 1
+scale = Vector2(3.96321, 3.67592)
+texture = ExtResource("4_1a7jq")

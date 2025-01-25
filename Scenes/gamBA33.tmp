@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnokbowiexkla"]
+
+[ext_resource type="Texture2D" uid="uid://dbkrsp2l7jree" path="res://grass.jpg" id="1_3sey8"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="2_6suia"]
+[ext_resource type="Texture2D" uid="uid://sdfjlhqtqepp" path="res://icon.svg" id="3_u13ml"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkc5"]
+size = Vector2(27.5, 79.25)
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -893.0
+offset_top = -1110.0
+offset_right = 2595.0
+offset_bottom = 2378.0
+texture = ExtResource("1_3sey8")
+stretch_mode = 1
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_6suia")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_cdkc5")
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_u13ml")
