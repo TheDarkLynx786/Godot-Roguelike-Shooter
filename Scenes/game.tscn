@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dnokbowiexkla"]
+[gd_scene load_steps=9 format=3 uid="uid://dnokbowiexkla"]
 
 [ext_resource type="Texture2D" uid="uid://dbkrsp2l7jree" path="res://grass.jpg" id="1_3sey8"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_6suia"]
 [ext_resource type="Texture2D" uid="uid://sdfjlhqtqepp" path="res://icon.svg" id="3_u13ml"]
-[ext_resource type="Texture2D" uid="uid://behahyxivmsyk" path="res://GunsPack/GunsPack/Guns/Revolver.png" id="4_1a7jq"]
 [ext_resource type="Script" path="res://Scripts/gun.gd" id="4_s2scx"]
+[ext_resource type="Texture2D" uid="uid://tsvcuuq0ptdl" path="res://GunsPack/GunsPack/Guns/AK47.png" id="5_xlyn2"]
+[ext_resource type="Script" path="res://Scenes/gun_sprites.gd" id="6_7ut24"]
 [ext_resource type="Script" path="res://Scripts/bullet_container.gd" id="6_mymrc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkc5"]
@@ -39,8 +40,9 @@ script = ExtResource("4_s2scx")
 [node name="Gun Sprite" type="Sprite2D" parent="Player/Gun"]
 texture_filter = 1
 scale = Vector2(3.96321, 3.67592)
-texture = ExtResource("4_1a7jq")
+texture = ExtResource("5_xlyn2")
 offset = Vector2(17, 0)
+script = ExtResource("6_7ut24")
 
 [node name="Bullet Container" type="Node2D" parent="Player/Gun"]
 position = Vector2(90.585, -9.188)

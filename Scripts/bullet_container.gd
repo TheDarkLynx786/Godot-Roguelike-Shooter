@@ -5,6 +5,7 @@ var bullet_scene = preload("res://Scenes/bullet.tscn")
 var env: Node2D
 var timer: Timer
 var shootable = true
+var cd = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +25,7 @@ func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("Click") and shootable):
 		shoot()
 		shootable = false
-		timer.start()
+		timer.start(cd)
 	
 
 
