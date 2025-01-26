@@ -2,6 +2,7 @@ extends Node2D
 
 var gun_sprite
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	gun_sprite = get_node("Gun Sprite")
