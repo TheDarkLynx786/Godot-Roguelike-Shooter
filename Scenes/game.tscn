@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dnokbowiexkla"]
+[gd_scene load_steps=10 format=3 uid="uid://dnokbowiexkla"]
 
 [ext_resource type="Texture2D" uid="uid://dbkrsp2l7jree" path="res://grass.jpg" id="1_3sey8"]
 [ext_resource type="Script" path="res://Scripts/player.gd" id="2_6suia"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://tsvcuuq0ptdl" path="res://GunsPack/GunsPack/Guns/AK47.png" id="5_xlyn2"]
 [ext_resource type="Script" path="res://Scenes/gun_sprites.gd" id="6_7ut24"]
 [ext_resource type="Script" path="res://Scripts/bullet_container.gd" id="6_mymrc"]
+[ext_resource type="Script" path="res://Scenes/spawner.gd" id="8_uye4v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdkc5"]
 size = Vector2(98.6111, 102.778)
@@ -49,3 +50,6 @@ position = Vector2(90.585, -9.188)
 script = ExtResource("6_mymrc")
 
 [node name="Bullet Cooldown" type="Timer" parent="Player/Gun"]
+
+[node name="Enemy Container" type="Node2D" parent="."]
+script = ExtResource("8_uye4v")

@@ -1,7 +1,7 @@
 extends Area2D
 
 
-const BULLET_SPEED = 1000.0
+const BULLET_SPEED = 3000.0
 const BULLET_DIST = 1000.0
 
 var direction = Vector2.ZERO
